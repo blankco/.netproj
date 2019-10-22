@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +13,7 @@ namespace WindowsFormsApp2
     public partial class Form1 : Form
     {
         bool choice = true;
-        string[] prizes = { "Singko", "Dos", "Tres","Shift","Uno" };
+        string[] prizes = { "Uno", "Dos", "Tres","Singko","Shift" };
         int randomNumber;
         Random ranNumberGenerator = new Random();
         public Form1()
@@ -248,14 +248,14 @@ namespace WindowsFormsApp2
                 }
 
                 if (Convert.ToInt32(button3.Tag) < Convert.ToInt32(button4.Tag))
-                    textBox1.Text = "Door 3 has " + prizes[Convert.ToInt32(button2.Tag)] + ". You can change doors now!";
+                    textBox1.Text = "Door 3 has " + prizes[Convert.ToInt32(button3.Tag)] + ". You can change doors now!";
                 else if (Convert.ToInt32(button4.Tag) < Convert.ToInt32(button5.Tag))
-                    textBox1.Text = "Door 4 has " + prizes[Convert.ToInt32(button5.Tag)] + ". You can change doors now!";
+                    textBox1.Text = "Door 4 has " + prizes[Convert.ToInt32(button4.Tag)] + ". You can change doors now!";
                 choice = false;
             }
             else
             {
-                textBox1.Text = "Congratulations you've won " + prizes[Convert.ToInt32(button1.Tag)];
+                textBox1.Text = "Congratulations you've won " + prizes[Convert.ToInt32(button4.Tag)];
                 button1.Enabled = false;
                 button2.Enabled = false;
                 button3.Enabled = false;
@@ -317,7 +317,7 @@ namespace WindowsFormsApp2
             }
             else
             {
-                textBox1.Text = "Congratulations you've won " + prizes[Convert.ToInt32(button1.Tag)];
+                textBox1.Text = "Congratulations you've won " + prizes[Convert.ToInt32(button5.Tag)];
                 button1.Enabled = false;
                 button2.Enabled = false;
                 button3.Enabled = false;
